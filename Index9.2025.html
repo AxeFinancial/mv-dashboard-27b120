@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MOD Ventures • September 2025 Financial Package</title>
+  <style>
+    :root{--bg:#0b0c10;--card:#111317;--muted:#1a1d23;--text:#e8eaed;--sub:#9fb3c8;--accent:#0ea5e9;--border:#22252c;--ok:#10b981;--warn:#f59e0b}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    header{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#0b0c10 0%, #0b0c10cc 100%)}
+    h1{font-size:20px;margin:0}
+    .wrap{padding:24px;max-width:1200px;margin:0 auto;position:relative}
+    .grid{display:grid;gap:12px}
+    .g4{grid-template-columns:repeat(4,1fr)}
+    .g3{grid-template-columns:repeat(3,1fr)}
+    .g2{grid-template-columns:repeat(2,1fr)}
+    @media(max-width:1000px){.g4,.g3,.g2{grid-template-columns:1fr}}
+    .card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px}
+    .card h3{font-size:12px;margin:0;color:#bcd3e6;text-transform:uppercase;letter-spacing:.04em}
+    .kicker{font-size:14px;line-height:1.65}
+    .big{font-size:22px;margin-top:8px;font-weight:700}
+    .muted{color:var(--sub)}
+    .row{display:flex;gap:8px;align-items:center}
+    .right{margin-left:auto}
+    .tabs{display:flex;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--border);margin:8px 0 16px}
+    .tabs button{background:transparent;color:#96a0b5;border:none;padding:10px 12px;border-bottom:2px solid transparent;font-weight:600;cursor:pointer}
+    .tabs button.active{color:#fff;border-bottom-color:var(--accent)}
+    .panel{padding:8px 0}
+    table{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}
+    th,td{border-bottom:1px solid var(--border);padding:10px;text-align:left}
+    th{color:#cfe1ff;font-weight:600;background:#0e1117}
+    .linkcard{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--border);border-radius:12px;background:#0e1117;margin-top:12px}
+    .linkbtn{display:inline-block;padding:10px 14px;border-radius:10px;background:#0e3a5f;color:#d1eeff;text-decoration:none;border:1px solid #134b74}
+    .footer{margin-top:16px;display:flex;justify-content:space-between;align-items:center}
+  </style>
+
+<style>
+  .financials-fab{position:fixed;top:16px;right:140px;z-index:1000;}
+  .financials-fab a{display:inline-block;padding:10px 14px;border-radius:10px;
+    background:linear-gradient(135deg,#2563eb,#1e40af);color:#f8fafc;
+    font-weight:700;box-shadow:0 8px 20px rgba(30,64,175,.35);border:1px solid rgba(255,255,255,.08)}
+  .financials-fab a:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(30,64,175,.45)}
+  @media print {.financials-fab{display:none}}
+</style>
+
+
+<style id="fixups-v1">
+/* Keep Financials fixed and not overlapping print */
+.financials-fab{position:fixed; top:16px; right:140px; z-index:9999;}
+.financials-fab a{ display:inline-block; padding:10px 14px; border-radius:10px;
+  background:linear-gradient(135deg,#2563eb,#1e40af); color:#f8fafc; font-weight:700;
+  box-shadow:0 8px 20px rgba(30,64,175,.35); border:1px solid rgba(255,255,255,.08); text-decoration:none; }
+.financials-fab a:hover{ transform:translateY(-1px); box-shadow:0 10px 22px rgba(30,64,175,.45); }
+@media print { .financials-fab{ display:none !important; } }
+
+/* Hide empty icon-only cards without touching layout CSS */
+.card.icon-only, .card.placeholder, .card:empty { display:none !important; }
+.card > img:only-child { display:none !important; }
+</style>
+
+
+<style id="chart-minheights">
+  .chart, .chart-card, .chart-container { min-height: 280px; }
+  canvas { min-height: 240px; }
+</style>
+
+
+<style id="nav-cta-style">
+  #financials-link.nav-cta{
+    background: linear-gradient(135deg,#2563eb,#1e40af);
+    color:#e6eefc; border:1px solid rgba(255,255,255,.12);
+    padding:8px 14px; border-radius:12px; font-weight:700; text-decoration:none;
+    display:inline-block; line-height:1; box-shadow:0 2px 10px rgba(37,99,235,.25);
+  }
+  #financials-link.nav-cta:hover{ filter:brightness(1.06) }
+  /* Nudge to top right of header without fixing on scroll */
+  header, .topbar, .nav, .navbar { position: relative; }
+  #financials-link.nav-cta{ position:absolute; right:20px; top:14px; }
+  @media (max-width:720px){ #financials-link.nav-cta{ position:static; float:right; margin:8px 0 0 8px; } }
+</style>
+
+
+<style id="chart-height-hardfix">
+  .chart, .chart-card, .chart-container { min-height: 340px !important; height: 340px !important; }
+  .chart > canvas, .chart-card > canvas, .chart-container > canvas, canvas.chartjs-render-monitor {
+    min-height: 300px !important; height: 300px !important; width: 100% !important; display: block !important;
+  }
+</style>
+
+</head>
+<body>
+
+
+  <header>
+    <div>
+      <h1>MOD Ventures • September 2025 Financial Package</h1>
+    </div>
+    <div class="row">
+      
+    </div>
+  <a href="https://docs.google.com/spreadsheets/d/1E3A1pCqSHdlWhx0ELc0Hu_7VJl8hOHPcxBJhA7vnOgU/edit?gid=1502454106#gid=1502454106" id="financials-link" class="nav-cta" target="_blank" rel="noopener">Financials</a></header>
+
+  <div class="wrap">
+
+    <nav class="tabs" aria-label="Sections">
+      <button class="active" data-tab="narrative">Narrative</button>
+      <button data-tab="overview">Overview</button>
+      <button data-tab="revenue">Revenue</button>
+      <button data-tab="team">Team</button>
+      <button data-tab="trends">Trends</button>
+    </nav>
+
+    <!-- Narrative (only tab changed per user) -->
+    <section id="narrative" class="panel">
+      <div class="card">
+        <h3>Executive Summary</h3>
+        <div class="kicker" id="narrative-exec">
+          September marked a period of stabilization and disciplined execution across revenue, margins, and cash flow following the client transitions earlier this summer.
+          Total revenue grew slightly to $122.9K, up 1.2% from August, with gross margin expanding by over 5 points to 55.7% — the highest level since July.
+          Net income improved 25% month-over-month to $8.1K, demonstrating improved leverage on fixed costs and controlled variable expenses.
+          There were no churns or downsells in September, reinforcing revenue stability heading into Q4.
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <h3>Revenue Highlights</h3>
+        <div class="kicker">
+          <ul>
+            <li>CAS Subscription remained stable at $96K, buoyed by quarterly retainer recognition.</li>
+            <li>CAS Hourly revenue increased to $8K, primarily driven by the Community 43 payroll reconciliation engagement (~$7K).</li>
+            <li>Tax Services declined to $17K, following the expected seasonal tapering after the extension period.</li>
+          </ul>
+          Overall, revenue mix remains heavily weighted toward subscription services (~78%), providing predictable MRR and a strong foundation for Q4 growth.
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <h3>Margin & Expense Analysis</h3>
+        <div class="kicker">
+          Gross profit rose to $68.4K, a ~$7K improvement over August, driven by a healthier mix of project work and subscription revenue.
+          Gross margin expansion to 55.7% reflects tighter cost control and improved pricing discipline.
+          Margin trend context: July 54.6%, August 50.6%, September 55.7%, with YTD averaging about 50.3%.
+          Expenses increased by ~$4.7K, largely due to payroll timing and headcount adjustments. These were anticipated and remain within the planned range.
+          Despite this, operating leverage continued to improve, with margin gains outpacing cost increases.
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <h3>Capacity & Operational Insights</h3>
+        <div class="kicker">
+          Average utilization ended the month at 70.8%, with ~872 billable hours against 1,232 hours of team capacity, leaving ~360 hours (~29%) available for revenue generation without additional headcount. Utilization was roughly flat to slightly down versus August, reinforcing the need to reallocate capacity and accelerate pipeline conversion into Q4.
+          Reallocating this capacity and improving workload distribution remain the fastest path to near‑term revenue growth heading into Q4.
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <h3>Strategic Observations & Q4 Outlook</h3>
+        <div class="kicker">
+          <ul>
+            <li>Revenue stability has returned following summer churn; focus turns to targeted client acquisition and year‑end planning.</li>
+            <li>Margin expansion is trending positively; maintaining ≥53% GM will be key to sustaining profitability.</li>
+            <li>Capacity optimization is the most immediate lever to accelerate revenue without additional costs.</li>
+            <li>Working capital continues to strengthen; AR collections improving and operating cash flow positive.</li>
+          </ul>
+          Balance sheet as of September 30: cash $56K versus $50K in August, reflecting tighter AP and credit card management alongside improved collections.
+          Accounts receivable ended at $9K, down from $27K in August due to a focused collections effort and tighter controls.
+          Net income finished at $8K versus $7K in August. Runway is stronger as improved cash management extends visibility into Q4.
+        </div>
+      </div>
+
+      <!-- Link to full financials (at bottom per user) -->
+      <div class="card linkcard">
+        <div>📊</div>
+        <div>
+          
+          <div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- All other tabs intentionally unchanged -->
+    <section id="overview" class="panel" style="display:none">
+      <div class="card">
+        <h3>Context & Takeaways</h3>
+        <div class="kicker">
+          <ul>
+            <li>Revenue uptick reflects the first full month of stability post‑summer churn and a boost from hourly project work.</li>
+            <li>Gross margin strengthened on healthier mix; maintaining ≥53% GM is the operating guardrail for Q4.</li>
+            <li>Expenses increased due to payroll timing and selective headcount moves; core cost base remains disciplined.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid g3" style="margin-top:12px">
+        <div class="card"><h3>Revenue</h3><div class="big" id="k-revenue">$122,854</div></div>
+        <div class="card"><h3>Gross Profit</h3><div class="big" id="k-gp">$68,416</div><div class="muted">55.7% margin</div></div>
+        <div class="card"><h3>Net Income</h3><div class="big" id="k-ni">$8,072</div></div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <div class="row"><h3>Revenue vs. Gross Profit (Monthly)</h3><span class="right muted">Jan–Sep 2025</span></div>
+        <div style="height:300px"><canvas id="revGpChart"></canvas></div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <div class="row"><h3>Revenue vs. Net Income (Monthly)</h3><span class="right muted">Jan–Sep 2025</span></div>
+        <div style="height:300px"><canvas id="revNiChart"></canvas></div>
+      </div>
+
+      <div class="card linkcard">
+        <div>📑</div>
+        <div>
+          
+          <div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="revenue" class="panel" style="display:none">
+      <div class="grid g2">
+        <div class="card">
+          <h3>Revenue Mix</h3>
+          <div style="height:300px"><canvas id="mixChart"></canvas></div>
+        </div>
+        <div class="card">
+          <h3>Revenue Commentary</h3>
+          <ul class="kicker">
+            <li>Subscription mix anchors predictability; targeted upsells and scope realignment can lift avg. revenue per client (ARPC).</li>
+            <li>Project/Hourly momentum (Community 43) shows capacity to execute short, high‑value bursts.</li>
+            <li>Tax dips seasonally; offset via planning engagements and year‑end prep.</li>
+          </ul>
+          <div id="mixList" class="kicker" style="margin-top:8px"></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <h3>Margin & Expense Insight</h3>
+        <div class="grid g2 kicker">
+          <div>
+            <div class="row"><span>Gross Profit</span><span class="right" id="gp-month">$68,416</span></div>
+            <div class="row"><span>vs. August</span><span class="right" id="gp-delta" style="color:var(--ok)">+ $7,018</span></div>
+            <div class="row" style="border-top:1px solid var(--border);padding-top:8px"><span>Margin</span><span class="right" id="gm-pct" style="color:var(--ok)">55.7%</span></div>
+          </div>
+          <div>
+            <div class="row"><span>Expenses</span><span class="right" id="exp-month">$60,344</span></div>
+            <div class="row"><span>vs. August</span><span class="right" id="exp-delta" style="color:var(--warn)">+ $4,739</span></div>
+            <div class="muted" style="margin-top:8px">Increase tied to pay period timing and planned changes.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="panel" style="display:none">
+      <div class="grid g2">
+        <div class="card">
+          <h3>Utilization by Team Member</h3>
+          <div style="height:350px"><canvas id="utilChart"></canvas></div>
+        </div>
+        <div class="card">
+          <h3>Capacity Summary</h3>
+          <table>
+            <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td>Total Capacity</td><td>1,232 hrs</td></tr>
+              <tr><td>Billable Hours</td><td>872 hrs</td></tr>
+              <tr><td>Available Hours</td><td>360 hrs</td></tr>
+              <tr><td>Average Utilization</td><td>70.8%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <h3>Team Commentary</h3>
+        <ul class="kicker">
+          <li>Ayushi (82.1%), Trish (79.5%), and Jahnvi (76.0%) remain near or above the 75% utilization benchmark, aligning with staffing and margin goals.
+          <li>Under-75% cohort requires reallocation and timeboxing of non‑billable tasks.</li>
+          <li>Director‑level utilization should be judged against outcomes, not raw %.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="trends" class="panel" style="display:none">
+      <div class="grid g2">
+        <div class="card">
+          <h3>Gross Margin (%) Trend</h3>
+          <div style="height:300px"><canvas id="marginChart"></canvas></div>
+        </div>
+        <div class="card">
+          <h3>Expenses (Monthly)</h3>
+          <div style="height:300px"><canvas id="expChart"></canvas></div>
+        </div>
+      </div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="card">
+          <h3>Cash Flow & Working Capital</h3>
+          <p class="kicker">Positive operating cash flow supported by accelerated AR collections; AP discipline sustained. Runway continues to extend into Q4.</p>
+        </div>
+        <div class="card">
+          <h3>Q4 Focus</h3>
+          <ul class="kicker">
+            <li>Replace July churn with targeted client acquisition and year‑end tax planning work.</li>
+            <li>Lift utilization toward the 85% benchmark through allocation and scheduling.</li>
+            <li>Preserve margin gains; maintain ≥53% GM as a floor.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="card" style="margin-top:16px;background:linear-gradient(90deg,#0ea5e9,#0284c7);border:none">
+      <div class="grid g4" style="color:white">
+        <div><div class="muted">Current MRR</div><div class="big" id="mrr">96K</div></div>
+        <div><div class="muted">Q3 Revenue</div><div class="big" id="q3rev">389K</div></div>
+        <div><div class="muted">Available Hours</div><div class="big" id="cap">360 hrs</div></div>
+        <div><div class="muted">Q4 Focus</div><div class="big">Growth</div></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <span class="muted">© 2025 AxeFi. All rights reserved. • AxeFi Proprietary & Confidential</span>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script>
+    let monthlyData = [
+      { month: 'Jan', revenue: 137358, grossProfit: 65826, expenses: 56205, netIncome: 9621, grossMargin: 47.92 },
+      { month: 'Feb', revenue: 134989, grossProfit: 69755, expenses: 50681, netIncome: 19075, grossMargin: 51.67 },
+      { month: 'Mar', revenue: 137725, grossProfit: 69747, expenses: 62354, netIncome: 7465, grossMargin: 50.64 },
+      { month: 'Apr', revenue: 138973, grossProfit: 74694, expenses: 62470, netIncome: 11735, grossMargin: 53.75 },
+      { month: 'May', revenue: 120244, grossProfit: 39941, expenses: 68447, netIncome: -27839, grossMargin: 33.22 },
+      { month: 'Jun', revenue: 124643, grossProfit: 63952, expenses: 55377, netIncome: 8575, grossMargin: 51.31 },
+      { month: 'Jul', revenue: 145205, grossProfit: 79263, expenses: 55455, netIncome: 23808, grossMargin: 54.59 },
+      { month: 'Aug', revenue: 121440, grossProfit: 61398, expenses: 55605, netIncome: 6466, grossMargin: 50.56 },
+      { month: 'Sep', revenue: 122854, grossProfit: 68416, expenses: 60344, netIncome: 8072, grossMargin: 55.69 }
+    ];
+    const revenueBreakdown = [
+      { name: 'CAS Subscription', value: 96000 },
+      { name: 'CAS Hourly', value: 8000 },
+      { name: 'Tax Services', value: 17000 },
+      { name: 'CAS Project', value: 1200 },
+      { name: 'Other', value: 654 }
+    ];
+    const utilizationData = [{"name": "Jahnvi","util": 76.0},{"name": "Ayushi Shah","util": 82.1},{"name": "Dhaval Jain","util": 60.1},{"name": "Heather Noteboom","util": 71.9},{"name": "Phaedra Sherman","util": 69.5},{"name": "Adam Campillo","util": 56.3},{"name": "Trish Hockenbury","util": 79.5}];
+
+    const $ = (id)=>document.getElementById(id);
+    const fmt = (n)=> (n<0?'-$':'$') + Math.abs(n).toLocaleString(undefined,{maximumFractionDigits:0});
+    const labels = ()=> monthlyData.map(d=>d.month);
+
+    document.querySelectorAll('.tabs button').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('.tabs button').forEach(b=> b.classList.remove('active'));
+        btn.classList.add('active');
+        ['narrative','overview','revenue','team','trends'].forEach(id=>{
+          document.getElementById(id).style.display = id===btn.dataset.tab ? '' : 'none';
+        });
+        window.scrollTo({top:0, behavior:'instant'});
+      });
+    });
+
+    function fillKPIs(){
+      const aug = monthlyData[monthlyData.length-2];
+      const sep = monthlyData[monthlyData.length-1];
+      $('k-revenue') && ($('k-revenue').textContent = fmt(sep.revenue));
+      $('k-gp') && ($('k-gp').textContent = fmt(sep.grossProfit));
+      $('k-ni') && ($('k-ni').textContent = fmt(sep.netIncome));
+      $('gp-month') && ($('gp-month').textContent = fmt(sep.grossProfit));
+      const gpDelta = sep.grossProfit-aug.grossProfit;
+      $('gp-delta') && ($('gp-delta').textContent = (gpDelta>=0?'+ ':'- ') + fmt(Math.abs(gpDelta)).replace('$',''));
+      $('gm-pct') && ($('gm-pct').textContent = (sep.grossMargin ?? 0).toFixed(1) + '%');
+      $('exp-month') && ($('exp-month').textContent = fmt(sep.expenses));
+      const expDelta = sep.expenses-aug.expenses;
+      $('exp-delta') && ($('exp-delta').textContent = (expDelta>=0?'+ ':'- ') + fmt(Math.abs(expDelta)).replace('$',''));
+    }
+
+    let revGpChart, revNiChart, mixChart, utilChart, marginChart, expChart;
+    function buildRevGp(){
+      const ctx = document.getElementById('revGpChart')?.getContext('2d'); if(!ctx) return;
+      revGpChart && revGpChart.destroy();
+      revGpChart = new Chart(ctx, {
+        type:'line',
+        data:{ labels: labels(), datasets:[
+          {label:'Revenue', data: monthlyData.map(d=>d.revenue), borderWidth:2, tension:.25},
+          {label:'Gross Profit', data: monthlyData.map(d=>d.grossProfit), borderWidth:2, tension:.25}
+        ]},
+        options:{ responsive:true, maintainAspectRatio:false,
+          plugins:{ legend:{ labels:{ color:'#cbd5e1' } }, tooltip:{ callbacks:{ label:(c)=> c.dataset.label+': '+fmt(c.parsed.y) } } },
+          scales:{ x:{ ticks:{ color:'#cbd5e1' }, grid:{ color:'#1f232b' }}, y:{ ticks:{ color:'#cbd5e1' }, grid:{ color:'#1f232b' }} }
+        }
+      });
+    }
+    function buildRevNi(){
+      const ctx = document.getElementById('revNiChart')?.getContext('2d'); if(!ctx) return;
+      revNiChart && revNiChart.destroy();
+      revNiChart = new Chart(ctx, {
+        type:'line',
+        data:{ labels: labels(), datasets:[
+          {label:'Revenue', data: monthlyData.map(d=>d.revenue), borderWidth:2, tension:.25},
+          {label:'Net Income', data: monthlyData.map(d=>d.netIncome), borderWidth:2, tension:.25}
+        ]},
+        options:{ responsive:true, maintainAspectRatio:false,
+          plugins:{ legend:{ labels:{ color:'#cbd5e1' } }, tooltip:{ callbacks:{ label:(c)=> c.dataset.label+': '+fmt(c.parsed.y) } } },
+          scales:{ x:{ ticks:{ color:'#cbd5e1' }, grid:{ color:'#1f232b' }}, y:{ ticks:{ color:'#cbd5e1' }, grid:{ color:'#1f232b' }} }
+        }
+      });
+    }
+    function buildMix(){
+      const ctx = document.getElementById('mixChart')?.getContext('2d'); if(!ctx) return;
+      mixChart && mixChart.destroy();
+      mixChart = new Chart(ctx, {
+        type:'pie',
+        data:{ labels: revenueBreakdown.map(r=>r.name), datasets:[{ data: revenueBreakdown.map(r=>r.value) }] },
+        options:{ plugins:{ legend:{ labels:{ color:'#cbd5e1' } }, tooltip:{ callbacks:{ label:(c)=> c.label+': '+fmt(c.parsed) } } } }
+      });
+      const list = revenueBreakdown.map(r=>`<div class="row" style="justify-content:space-between"><span>${r.name}</span><strong>${fmt(r.value)}</strong></div>`).join('')
+        + `<div class="row" style="justify-content:space-between;border-top:1px solid var(--border);margin-top:8px;padding-top:8px"><span>Total</span><strong>${fmt(revenueBreakdown.reduce((s,r)=>s+r.value,0))}</strong></div>`;
+      const el = document.getElementById('mixList'); if(el) el.innerHTML = list;
+    }
+    function buildUtil(){
+      const ctx = document.getElementById('utilChart')?.getContext('2d'); if(!ctx) return;
+      utilChart && utilChart.destroy();
+      const colors = utilizationData.map(u=>{
+        if (u.util >= 70) return '#5DA9FF';     // blue for top performers
+        if (u.util >= 50) return '#f59e0b';     // orange for mid
+        return '#fbbf24';                       // lighter orange for low
+      });
+      utilChart = new Chart(ctx, {
+        type:'bar',
+        data:{ labels: utilizationData.map(u=>u.name),
+               datasets:[{ label:'Util %', data: utilizationData.map(u=>u.util), backgroundColor: colors }] },
+        options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false,
+          scales:{ x:{ min:0,max:100,ticks:{ color:'#cbd5e1' }, grid:{ color:'#1f232b' } }, y:{ ticks:{ color:'#cbd5e1' }, grid:{ color:'#1f232b' } } },
+          plugins:{ legend:{ labels:{ color:'#cbd5e1' } }, tooltip:{ callbacks:{ label:(c)=> c.dataset.label+': '+c.parsed.x+'%' } } }
+        }
+      });
+    }
+    function buildMargin(){
+      const ctx = document.getElementById('marginChart')?.getContext('2d'); if(!ctx) return;
+      marginChart && marginChart.destroy();
+      marginChart = new Chart(ctx, {
+        type:'line',
+        data:{ labels: labels(), datasets:[{ label:'Gross Margin %', data: monthlyData.map(d=>d.grossMargin), borderWidth:2, tension:.25 }] },
+        options:{ responsive:true, maintainAspectRatio:false,
+          plugins:{ legend:{ labels:{ color:'#cbd5e1' } } },
+          scales:{ x:{ ticks:{ color:'#cbd5e1' }, grid:{ color:'#1f232b' } }, y:{ ticks:{ color:'#cbd5e1' }, grid:{ color:'#1f232b' } } }
+        }
+      });
+    }
+    function buildExp(){
+      const ctx = document.getElementById('expChart')?.getContext('2d'); if(!ctx) return;
+      expChart && expChart.destroy();
+      expChart = new Chart(ctx, {
+        type:'line',
+        data:{ labels: labels(), datasets:[{ label:'Expenses', data: monthlyData.map(d=>d.expenses), borderWidth:2, tension:.25 }] },
+        options:{ responsive:true, maintainAspectRatio:false,
+          plugins:{ legend:{ labels:{ color:'#cbd5e1' } } },
+          scales:{ x:{ ticks:{ color:'#cbd5e1' }, grid:{ color:'#1f232b' } }, y:{ ticks:{ color:'#cbd5e1' }, grid:{ color:'#1f232b' } } }
+        }
+      });
+    }
+
+    document.getElementById('btn-print').onclick = ()=> window.print();
+    (function init(){ fillKPIs(); buildRevGp(); buildRevNi(); buildMix(); buildUtil(); buildMargin(); buildExp(); })();
+  </script>
+
+<script id="cleanup-icons-and-reflow">
+(function(){
+  function removePlaceholders(){
+    document.querySelectorAll('.card, section, .section').forEach(function(el){
+      var txt = (el.textContent || '').trim();
+      var emojiOnly = /^[📊📑]+$/.test(txt);
+      var noText = txt.length === 0;
+      var onlyImg = el.children.length === 1 && el.firstElementChild && el.firstElementChild.tagName === 'IMG';
+      var hasReal = el.querySelector('h1,h2,h3,h4,.metric,.stat,.value,.title,.card-title');
+      if (!hasReal && (emojiOnly || noText || onlyImg)) {
+        el.remove();
+      }
+    });
+  }
+  function reflowCharts(){
+    document.querySelectorAll('canvas').forEach(function(c){
+      if ((c.clientHeight === 0 || c.height === 0) && !c.style.height){
+        c.style.height = '260px';
+        if (c.parentElement) c.parentElement.style.minHeight = '280px';
+      }
+    });
+    try { window.dispatchEvent(new Event('resize')); } catch(e){}
+    try {
+      if (window.Chart && Chart.instances) {
+        Object.values(Chart.instances).forEach(function(inst){ if (inst && inst.resize) inst.resize(); });
+      }
+    } catch(e){}
+    try { if (window.echarts) { document.querySelectorAll('.echart').forEach(function(n){ var i = echarts.getInstanceByDom(n); if(i){i.resize();}}); } } catch(e){}
+  }
+  removePlaceholders();
+  reflowCharts();
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('a,button,[data-tab]'); if (t) setTimeout(function(){ removePlaceholders(); reflowCharts(); }, 250);
+  }, true);
+})();
+</script>
+
+
+<script id="chart-reflow-hardfix">
+(function(){
+  function reflow(){
+    try { 
+      window.dispatchEvent(new Event('resize')); 
+    } catch(e){}
+    try {
+      if (window.Chart && Chart.instances) {
+        var list = Chart.instances;
+        for (var k in list){
+          var inst = list[k];
+          if (inst && inst.resize) { inst.resize(); inst.update(); }
+        }
+      }
+    } catch(e){}
+    try {
+      if (window.echarts){
+        document.querySelectorAll('.echart').forEach(function(n){
+          var inst = echarts.getInstanceByDom(n); if (inst){ inst.resize(); }
+        });
+      }
+    } catch(e){}
+  }
+  // Initial
+  setTimeout(reflow, 150);
+  setTimeout(reflow, 600);
+  // On tab/nav clicks
+  document.addEventListener('click', function(e){
+    if (e.target.closest('a,button,[data-tab]')) setTimeout(reflow, 250);
+  }, true);
+})();
+</script>
+
+
+<script id="chart-build">
+(function(){
+  if (!window.Chart) return;
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
+  const revenue = [137358,134989,137725,138973,120244,124643,145205,121440,122854];
+  const gross =   [ 65826, 69755, 69747, 74694, 39941, 63952, 79263, 61398, 68416];
+  const net =     [  9621, 19075,  7465, 11735,-27839,  8575, 23808,  6466,  8072];
+  function line(id, datasets){
+    const el = document.getElementById(id);
+    if (!el) return;
+    const ctx = el.getContext('2d');
+    new Chart(ctx, {
+      type:'line',
+      data:{ labels: months, datasets },
+      options:{
+        responsive:true,
+        maintainAspectRatio:false,
+        interaction:{mode:'index',intersect:false},
+        scales:{ x:{ grid:{color:'rgba(255,255,255,.06)'}}, y:{ grid:{color:'rgba(255,255,255,.06)'} } },
+        plugins:{ legend:{ labels:{ color:'#cfe1ff'} } }
+      }
+    });
+  }
+  function bar(id, labels, values){
+    const el=document.getElementById(id); if(!el) return;
+    new Chart(el.getContext('2d'),{
+      type:'bar',
+      data:{ labels, datasets:[{label:'Value', data: values, backgroundColor:['#3b82f6','#8b5cf6','#10b981','#f59e0b','#6366f1']}]},
+      options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}} }
+    });
+  }
+  // Overview / Revenue charts
+  line('revGpChart',[
+    {label:'Revenue', data: revenue, borderColor:'#60a5fa', backgroundColor:'rgba(96,165,250,.25)', tension:.3, fill:true},
+    {label:'Gross Profit', data: gross, borderColor:'#34d399', backgroundColor:'rgba(52,211,153,.2)', tension:.3, fill:true}
+  ]);
+  line('revNiChart',[
+    {label:'Revenue', data: revenue, borderColor:'#60a5fa', backgroundColor:'rgba(96,165,250,.25)', tension:.3, fill:true},
+    {label:'Net Income', data: net, borderColor:'#f59e0b', backgroundColor:'rgba(245,158,11,.2)', tension:.3, fill:true}
+  ]);
+  // Mix pie chart (if present) — build from the Sept revenue breakdown
+  (function(){
+    const el = document.getElementById('mixChart'); if(!el) return;
+    new Chart(el.getContext('2d'),{
+      type:'pie',
+      data:{ labels:['CAS Subscription','CAS Hourly','Tax Services','CAS Project','Other'],
+             datasets:[{ data:[96000,8000,17000,1200,654],
+               backgroundColor:['#3b82f6','#f59e0b','#10b981','#8b5cf6','#6366f1']}]},
+      options:{ responsive:true, maintainAspectRatio:false }
+    });
+  })();
+  // Team utilization
+  (function(){
+    const el=document.getElementById('utilChart'); if(!el) return;
+    const labels=['Ayushi Shah','Trish Hockenbury','Jahnvi','Heather Noteboom','Phaedra Sherman','Dhaval Jain','Adam Campillo'];const values=[82.1,79.5,76.0,71.9,69.5,60.1,56.3];
+    new Chart(el.getContext('2d'),{type:'bar',data:{ labels, datasets:[{label:'Utilization %', data: values, backgroundColor: values.map(v=> v>=75?'#3b82f6':'#f59e0b')}] },
+      options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{x:{max:100}}}
+    });
+  })();
+  // Margin trend (gross margin %)
+  (function(){
+    const el=document.getElementById('marginChart'); if(!el) return;
+    const gm=[47.92,51.67,50.64,53.75,33.22,51.31,54.59,50.56,55.69];
+    new Chart(el.getContext('2d'),{
+      type:'line',
+      data:{ labels:months, datasets:[{label:'Gross Margin %', data: gm, borderColor:'#34d399', backgroundColor:'rgba(52,211,153,.2)', tension:.3, fill:true}]},
+      options:{ responsive:true, maintainAspectRatio:false, scales:{y:{suggestedMax:100}} }
+    });
+  })();
+  // Expense trend (rough dummy using GP and Net to back into expense)
+  (function(){
+    const el=document.getElementById('expChart'); if(!el) return;
+    // Expenses per month (from the shared dataset)
+    const expenses=[56205,50681,62354,62470,68447,55377,55455,55605,60344];
+    new Chart(el.getContext('2d'),{
+      type:'bar',
+      data:{ labels:months, datasets:[{label:'Expenses', data: expenses, backgroundColor:'#94a3b8'}]},
+      options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}} }
+    });
+  })();
+})();
+</script>
+
+
+<script id="team-threshold-logic">
+(function(){
+  // Only run if our utilization arrays exist in the same scope (from chart-build)
+  try{
+    const labelMatch = /const labels=\[(.*?)\];/s.exec(document.querySelector('#chart-build')?.textContent||"");
+    const valueMatch = /const values=\[(.*?)\];/s.exec(document.querySelector('#chart-build')?.textContent||"");
+    if(!labelMatch || !valueMatch) return;
+    const labels = labelMatch[1].split(',').map(s=>s.replace(/['"]/g,'').trim());
+    const values = valueMatch[1].split(',').map(s=>parseFloat(s));
+
+    const onTrack = [];
+    const focus = [];
+    labels.forEach((name, i)=>{
+      const v = values[i];
+      (v>=75 ? onTrack : focus).push({name, v});
+    });
+
+    // Build HTML
+    function row(items){
+      return items.map(it=>`<li><strong>${it.name}</strong> (${it.v.toFixed(1)}%)</li>`).join('');
+    }
+    const html = `
+      <div class="card card-body" id="team-commentary-auto">
+        <h3 class="card-title">Team Commentary (Auto)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h4 class="text-blue-900 font-semibold mb-2">On-Track Team <span data-threshold-label='ontrack'>(≥ 75%)</span></h4>
+            <ul class="list-disc pl-5">${row(onTrack)}</ul>
+            <p class="text-xs text-gray-500 mt-2">These team members are aligned to margin goals and predictable delivery.</p>
+          </div>
+          <div>
+            <h4 class="text-amber-900 font-semibold mb-2">Priority Focus Group (&lt; 75%)</h4>
+            <ul class="list-disc pl-5">${row(focus)}</ul>
+            <p class="text-xs text-amber-700 mt-2">Actions: reallocation to revenue work, workload balancing, and timeboxing of non‑billable tasks. Anyone below the 75% target utilization is prioritized for improvement.</p>
+          </div>
+        </div>
+        <div class="mt-3 text-sm text-blue-800"><strong>Next Steps:</strong> Rebalancing planned for Q4 to lift the &lt;75% cohort above the 75% benchmark.</div>
+      </div>`;
+
+    // Insert the commentary block just after the utilization chart container if we can find it
+    const utilCanvas = document.getElementById('utilChart');
+    if (utilCanvas && utilCanvas.parentElement){
+      // Avoid duplicates
+      if (!document.getElementById('team-commentary-auto')){
+        utilCanvas.parentElement.insertAdjacentHTML('afterend', html);
+      }
+    }
+  }catch(e){}
+})();
+</script>
+
+
+<script>
+(function() {
+  try {
+    // If a global threshold exists on the page, use it. Otherwise default to 0.75
+    var THRESH = (window.TEAM_UTIL_THRESHOLD != null) ? window.TEAM_UTIL_THRESHOLD : 0.75;
+    var pct = Math.round(THRESH * 100);
+    var line = "Under-" + pct + "% cohort will require focused reallocation, workload balancing, and timeboxing of non-billable tasks to align with margin targets.";
+    var el = document.getElementById("under-threshold-line");
+    if (el) { el.textContent = line; }
+    // Also update any headings that include the threshold token placeholders, if present
+    var pfh = document.querySelectorAll("[data-threshold-label='priority']");
+    pfh.forEach(function(node){ node.textContent = "(< " + pct + "%)"; });
+    var onh = document.querySelectorAll("[data-threshold-label='ontrack']");
+    onh.forEach(function(node){ node.textContent = "(≥ " + pct + "%)"; });
+  } catch(e) { console.warn("Threshold script error:", e); }
+})();
+</script>
+</body>
+</html>
